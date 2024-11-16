@@ -17,7 +17,7 @@ Try this example below in your code to see how it works:
 </main>
 ```
 
----
+___
 
 ## 2. Events
 
@@ -35,7 +35,7 @@ Try this example below in your code to see how it works:
 <button onclick={handleClick}>Click me</button>
 ```
 
----
+___
 
 ## 3. Reactivity
 
@@ -57,7 +57,7 @@ Try this example using $state(number); below in your code to see how it works:
 <button onclick={() => count++}>{count}</button>
 ```
 
----
+___
 
 ### $props();
 
@@ -119,7 +119,7 @@ Try this example below in your code to see how it works:
 {/if}
 ```
 
----
+___
 
 ## 5. Loops
 

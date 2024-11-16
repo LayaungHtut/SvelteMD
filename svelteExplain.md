@@ -6,13 +6,13 @@ First, before we start, I really recommend you to download this vscode extension
 
 ![extension](images/intoSvelte/extension.png)
 
----
+___
 
 We will spend most of our time in the `src` folder when we are working with svelte.
 
 ![src](images/intoSvelte/src.png)
 
----
+___
 
 To run this code, we will use the `npm run dev` command. We will see the output in the browser.
 
@@ -26,7 +26,7 @@ npm run dev
 
 ![run](images/intoSvelte/run.png)
 
----
+___
 
 This is what you will see:
 
@@ -38,7 +38,7 @@ http://localhost:5173/
 
 is your website: you can click it or type this is your browser to open it.
 
----
+___
 
 Just like .html, .css and .js, our svelte files will be ending with .svelte.
 
@@ -65,11 +65,11 @@ You can see the example code below:
 </style>
 ```
 
----
+___
 
 In the `lib` folder, we store our reusable components. And to reuse them, we can use special svelte feature `$/lib/` to access the lib folder without typing the whole path.
 
----
+___
 
 In svelte, we have special route files: in which we will cover in the later section.
 
@@ -79,4 +79,4 @@ In svelte, we have special route files: in which we will cover in the later sect
 - `+layout.server.js`: The server-side layout that will be used for all the pages.
 - `+page.server.js`: The server-side page that will be used for all the pages.
 
----
+___

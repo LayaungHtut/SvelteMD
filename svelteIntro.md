@@ -24,7 +24,7 @@ npx sv create my-app
 
 `my-app` is the name of your app, which you can also say your folder that will contain all the svelte files and syntax.
 
----
+___
 
 And then we will install the packages:
 
@@ -32,7 +32,7 @@ And then we will install the packages:
 
 in which we type y and hit enter to install the packages.
 
----
+___
 
 After that, we will be choosing one from the three options:
 
@@ -46,7 +46,7 @@ After that, we will be choosing one from the three options:
 
 In this case, I'm gonna choose option 1. _hit enter_
 
----
+___
 
 ![image](images/create/image-4.png)
 
@@ -61,23 +61,23 @@ Now we gonna use Typescript syntax;
 
 **Next step is optional, you can hit enter to skip to the next step.**
 
----
+___
 
 ![image](images/create/image-5.png)
 
 But I'm gonna choose prettier for more clear format. We use space and arrow keys to select and as many as you found useful. Then we will hit enter to install the prettier.
 
----
+___
 
 ![image](images/create/image-6.png)
 
 We will choose npm to run or manage this svelte framework and other dependencies in our project. You will learn more about npm and usage in the later section.
 
----
+___
 
 ![image](images/create/image-7.png)
 
----
+___
 
 ![image](images/create/image-8.png)
 
