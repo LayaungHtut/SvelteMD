@@ -64,7 +64,18 @@ You can see the example code below:
    }
 </style>
 ```
+___
 
+In Svelte, we can also write the `class` just like some other frameworks: 
+
+```
+class:show={showState}
+```
+which is the same way we write as:
+```
+class = {showState ? 'show' : ''}
+```
+where `showState` is a boolean variable that we can use to toggle the class.
 ___
 
 In the `lib` folder, we store our reusable components. And to reuse them, we can use special svelte feature `$/lib/` to access the lib folder without typing the whole path.
