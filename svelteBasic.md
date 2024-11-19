@@ -1,8 +1,10 @@
 # Svelte Basics
 
-## 1. Reactivity
+## 1. Reactivity || Runes
 
 In Svelte, reactivity means to re-run the code whenever any of the referenced values change.
+
+
 
 ### 1.1 $state();
 
@@ -21,7 +23,25 @@ Try this example using $state(number); below in your code to see how it works:
 ```
 ___
 
-### 1.2 $props();
+### 1.2 $derived();
+
+> In Svelte, `$derived()` is a function that is used to create a derived variable. It is usually used to update `$state()` variable.
+
+Try this example below in your code to see how it works:
+
+```
+<script>
+	let count = $state(0)
+	let double = $derived(count * 2);
+</script>
+
+<button onclick={() => count++}>
+	{double}
+</button>
+```
+___
+
+### 1.3 $props();
 
 > In Svelte, we use $props(); as a way to pass the data from the parent component to the child component.
 
@@ -50,6 +70,25 @@ We will use two components: `Parent.svelte` and `Child.svelte` to understand how
 ```
 
 > This mean we can reuse the Child component as many time as we want with different data.
+___
+
+### 1.4 $effects();
+
+Let's start with an example, shall we?
+```
+<script>
+    let count = $state(0);
+
+    $effect(() => {
+        console.log(counted);
+    })
+</script>
+
+<button onclick={() => count++} >{count}</button>
+```
+
+> In Svelte, $effects(); is a function that is used to run code when the component is mounted.
+>> i.e, when the value of `count` changes,  function inside $effect(); will be executed, which is logging out `counted` to the console.
 ___
 
 ## 2. Events

@@ -89,5 +89,4 @@ In svelte, we have special route files: in which we will cover in the later sect
 - `+error.svelte`: The error page that will be shown when an error occurs.
 - `+layout.server.js`: The server-side layout that will be used for all the pages.
 - `+page.server.js`: The server-side page that will be used for all the pages.
-
 ___

@@ -67,3 +67,58 @@ For example:
 If you navigate to any page, you will see that we have a header and a footer.
 ___
 
+## 3. +error.svelte
+
+The `+error.svelte` is a special file used in Svelte to ***handle errors*** for a specific route or layout. This file typically contains the error page layout, and you can also add styles and custom logic to control how errors are displayed. Whenever an error occurs in a route or layout, Svelte will display the `+error.svelte` file.
+
+```
+<h2>Something went wrong</h2>
+
+<style>
+   h2 {
+	  color: red;
+   }
+</style>
+```
+The page will displayed `Something went wrong` whenever there is an error in the page.
+
+We usually use load functions to handle errors in svelte. We will show you how you can use the `+error.svelte` file in your project.
+
+```
+<script context="module">
+  export function load({ error, status }) {
+    let errorMessage = 'Something went wrong!';
+
+    if (status === 404) {
+      errorMessage = 'Page not found!';
+    } else if (status === 500) {
+      errorMessage = 'Internal server error!';
+    }
+
+    return {
+      props: {
+        status,
+        message: errorMessage
+      }
+    };
+  }
+</script>
+
+<script>
+  export let status: number;
+  export let message: string;
+</script>
+
+<h1>Error {status}</h1>
+<p>{message}</p>
+
+<style>
+  h1 {
+    color: red;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+</style>
+
+```
