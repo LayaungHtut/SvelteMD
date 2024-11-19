@@ -15,7 +15,7 @@ import { crossfade } from 'svelte/transition';
 import { scale } from 'svelte/transition';
 import { draw } from 'svelte/transition';
 ```
-***One Thing to note is that, we can use the duration in each transtion***
+___
 
 ## 1. { fade } transition
 
@@ -38,6 +38,12 @@ Try this example below in your code to see how it works:
 {/if}
 ```
 
+> In `fade` transition, we can use:
+>> - delay?: number;
+>> - duration?: number;
+>> - easing?: EasingFunction;
+___
+
 ## 2. { blur } transition
 
 > Blur is just like fade, but it blurs out the element instead of fading it out.
@@ -59,9 +65,17 @@ Try this example below in your code to see how it works:
 {/if}
 ```
 
+> In `blur` transition, we can use:
+>> - delay?: number;
+>> - duration?: number;
+>> - easing?: EasingFunction;
+>> - amount?: number | string;
+>> - opacity?: number;
+___
+
 ## 3. { fly } transition
 
-> Fly is used to fly out an element from one position to another. But unlike fade and blur, we will need to specify the direction the fly: which is `x or y`; to make it work properly.
+> The `fly` transition is used to fly out an element from one position to another. But unlike fade and blur, we will need to specify the direction the fly: which is `x or y`; to make it work properly.
 
 Try this example below in your code to see how it works:
 
@@ -79,6 +93,15 @@ Try this example below in your code to see how it works:
     </div>
 {/if}
 ```
+
+> In `fly` transition, we can use:
+>> - delay?: number;
+>> - duration?: number;
+>> - easing?: EasingFunction;
+>> - x?: number | string;
+>> - y?: number | string;
+>> - opacity?: number;
+___
 
 ## 4. { slide } transition
 
@@ -112,11 +135,17 @@ Try this example below in your code to see how it works:
   </style>
 ```
 
-## 5. { crossfade } transition
+> In `slide` transition, we can use:
+>> - delay?: number;
+>> - duration?: number;
+>> - easing?: EasingFunction;
+>> - axis?: 'x' | 'y';
+___
+
 
 ## 6. { scale } transition
 
-> In this scale transition, it scales in and out the element.
+> In this `scale` transition, it scales in and out the element.
 
 Try this example below in your code to see how it works:
 
@@ -146,7 +175,13 @@ Try this example below in your code to see how it works:
   </style>
 ```
 
-## 7. { draw } transition
+> In `scale` transition, we can use:
+>> - delay?: number;
+>> - duration?: number;
+>> - easing?: EasingFunction;
+>> - start?: number;
+>> - opacity?: number;
+___
 
 
 

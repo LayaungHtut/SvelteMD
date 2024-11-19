@@ -80,6 +80,7 @@ The `+error.svelte` is a special file used in Svelte to ***handle errors*** for 
    }
 </style>
 ```
+
 The page will displayed `Something went wrong` whenever there is an error in the page.
 
 We usually use load functions to handle errors in svelte. We will show you how you can use the `+error.svelte` file in your project.
@@ -120,5 +121,6 @@ We usually use load functions to handle errors in svelte. We will show you how y
     font-size: 1.2rem;
   }
 </style>
-
 ```
+
+
