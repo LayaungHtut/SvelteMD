@@ -207,3 +207,39 @@ In the `+page.svelte`,
 ___
 
 ## 5. +page.server.ts
+
+`+page.server.ts` is similar to` +page.ts`; it is used to handle logic or data fetching, but instead of running on the client side, it runs only on the server side. This file is useful for tasks that require access to server-only resources, like databases or secure APIs, ensuring that sensitive data or logic isn't exposed to the client.
+
+We will fetch data from `https://pokeapi.co/api/v2/pokemon?limit=10`;
+
+Try this code below to see how it works:
+
+```
+
+<!-- // src/routes/Pokemon/+page.server.ts -->
+
+export const load = async ({ fetch }) => {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
+    const data = await response.json();
+    const pokemon = data.results;
+
+    return {
+        pokemon
+    }
+};
+```
+
+```
+<!-- // src/routes/Pokemon/+page.ts -->
+
+<script lang="ts">
+
+    export let data;
+    const pokemon = data.pokemon;
+</script>
+
+{#each pokemon as pokemons}
+    <h2>{pokemons.name}</h2>
+{/each}
+```
+___
