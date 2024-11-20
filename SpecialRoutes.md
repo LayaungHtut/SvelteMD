@@ -122,5 +122,88 @@ We usually use load functions to handle errors in svelte. We will show you how y
   }
 </style>
 ```
+___
 
+## 4. +page.ts
 
+The `+page.js` file is placed in the same folder as your page file because it runs automatically when that page is loaded. It's used to handle logic or data fetching specific to that page.
+
+Try this simple code below to see how it works;
+
+```
+<!-- // src/routes/Products/+page.ts -->
+
+export const load = async () => {
+    return {
+        product: 'iphone-14'
+    }
+};
+```
+```
+<!-- // src/routes/Products/+page.ts -->
+
+<script>
+    export let data;
+    console.log(data);
+</script>
+```
+> It will log out what in the return in `+page.ts` file.
+>> In this case, it will log out `product: 'iphone-14'` on the console.
+
+Now let's try fetching data from the actual API, which pulls information from the database and brings it to your page.
+
+I will use this dummy API: `https://dummyjson.com/products?limit=10`;
+
+Try this simple codes in your code editor to see how it works:
+
+```
+<!-- // src/routes/Products/+page.ts -->
+
+export const load = async () => {
+    const response = await fetch('https://dummyjson.com/products?limit=10');
+    const data = await response.json();
+    const products = data.products
+    return {
+        products
+    }
+};
+```
+
+```
+<!-- // src/routes/Products/+page.ts -->
+
+<script>
+    export let data;
+    const { products } = data;
+</script>
+
+{#each products as product }
+    <h2>{product.title}</h2>
+    <p>{product.description}</p>
+{/each}
+```
+
+Let's breakdown what they mean, shall we?
+
+In the `+page.ts`,
+
+- We use `export` to make the function available in other files.
+
+- `async ` marks the function as asynchronous (it handles tasks that take time).
+
+- ` () => {}` is a short form of `function() {}`
+
+- `fetch`: Makes a request to a URL for data.
+
+- `await`: Waits for the data to come back before continuing.
+
+- `response.json()`: Converts the response into a JSON object (a readable format).
+
+In the `+page.svelte`,
+
+- `export let data` means that this component receives data from its parent, which is from `+page.ts`
+
+-  `const { products } = data;` is an another way to write `const products = data.products;` : extract data from the parents.
+___
+
+## 5. +page.server.ts

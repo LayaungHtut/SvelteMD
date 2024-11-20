@@ -87,6 +87,6 @@ In svelte, we have special route files: in which we will cover in the later sect
 - `+page.svelte`: The default page that will be opened when you open your website.
 - `+layout.svelte`: The layout that will be used for all the pages.
 - `+error.svelte`: The error page that will be shown when an error occurs.
-- `+layout.server.js`: The server-side layout that will be used for all the pages.
-- `+page.server.js`: The server-side page that will be used for all the pages.
+- `+page.ts`: The typescript or javascript file that will be used especially for data fetching form an API.
+- `+page.server.ts`: The server-side typescript or javascript file that will be used especially for data fetching form an API.
 ___

@@ -142,6 +142,13 @@ Try this example below in your code to see how it works:
 >> - axis?: 'x' | 'y';
 ___
 
+## 5. { crossfade } transition
+
+> The `crossfade` transition makes images or texts faded in and out to another images or texts:
+
+Try this example below in your code to see how it works:
+
+
 
 ## 6. { scale } transition
 
@@ -182,6 +189,8 @@ Try this example below in your code to see how it works:
 >> - start?: number;
 >> - opacity?: number;
 ___
+
+## 7. { draw } transition
 
 
 
