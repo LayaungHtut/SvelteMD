@@ -91,6 +91,66 @@ Let's start with an example, shall we?
 >> i.e, when the value of `count` changes,  function inside $effect(); will be executed, which is logging out `counted` to the console.
 ___
 
+### 1.5 $bindable();
+
+> In Svelte, `$bindable()` makes a variable easy to connect to the UI, like an input box, so it can change automatically. It helps the child component keep track of that variable. `The parent component` still needs to use `bind:value` to link its own value to the child’s. This way, both the parent and child can update each other automatically.
+
+
+We will make two files: `Parent.svelte` and `Child.svelte` to understand how it works.
+
+```
+<!-- Child.svelte -->
+
+<script>
+    let { value = $bindable()} = $props();
+</script>
+
+<input bind:value={value} />
+```
+
+```
+<!-- Parent.svelte -->
+
+<script>
+    import Child from './Child.svelte';
+    let name = $state('Tony');
+</script>
+
+<Child bind:value={name} />
+<h3>Hello {name}!</h3>
+```
+___
+
+### 1.6 $inspect();
+
+> In Svelte, `$inspect()` is a function similar to `console.log()`, and it will console.log every time the value of the variable changes.
+
+I will show you two examples to understand how it works:
+
+```
+<script>
+	let count = $state(0);
+	$inspect(count);
+</script>
+
+<button onclick={() => count++}>{count}</button>
+
+```
+
+```
+<script>
+	let count = $state(0);
+	let doubled = $state(count * 2)
+	$inspect(count, doubled);
+</script>
+
+<button onclick={() => count++}>{count}</button>
+<button onclick={() => doubled = count * 2}>{doubled}</button>
+```
+
+In the second example, both the `count` and `doubled` will be logged out to the console whenever each of them changes.
+___
+
 ## 2. Events
 
 In Svelte, events mean that you can connect a function to a DOM element or attribute.
