@@ -230,7 +230,7 @@ export const load = async ({ fetch }) => {
 ```
 
 ```
-<!-- // src/routes/Pokemon/+page.ts -->
+<!-- // src/routes/Pokemon/+page.svelte -->
 
 <script lang="ts">
 

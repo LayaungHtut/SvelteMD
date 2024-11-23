@@ -103,6 +103,11 @@ For example, we can use `svelte:element` to change the type of header element li
 <button onclick={() => headerType = 'h2'} >Change to h2</button>
 <button onclick={() => headerType = 'h4'} >Change to h4</button>
 ```
-
 We can adjust not only tags, but also attributes, classes, and styles.
+___
 
+## 6. svelte:options
+
+The `svelte:options` is usually used to create custom elements that can be used in the parent.
+
+Try this example below to see how it works:

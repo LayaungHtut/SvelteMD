@@ -151,6 +151,11 @@ I will show you two examples to understand how it works:
 In the second example, both the `count` and `doubled` will be logged out to the console whenever each of them changes.
 ___
 
+### 1.7 $host();
+
+
+___
+
 ## 2. Events
 
 In Svelte, events mean that you can connect a function to a DOM element or attribute.
@@ -265,3 +270,41 @@ Try this example below in your code to see how it works:
 
 It will display the list of anime names which are stored in the `animeNames` array.
 ___
+
+## 6. Getters and Setters
+
+In Svelte, we can use getters and setters to access and modify the values of a variable. In order to use this, we will need to convert the variables to private properties which can be declared using the `#` symbol.
+
+Try this temperature converter example below in your code to see how it works:
+
+```
+<script lang="ts">
+	   class Temperature  {
+			   #c = $state(0);
+			   #f = $state(0);
+
+			 get c() {
+				 return this.#c
+			 }
+
+			 set c(c) {
+				 this.#c
+				 this.#f = c * 1.8 + 32
+			 }
+
+			 get f() {
+				 return this.#f
+			 }
+
+			 set f(f) {
+				 this.#f
+				 this.#c = (f - 32) / 1.8
+			 }
+		 }
+
+	const temperature = new Temperature();
+</script>
+
+<input type="number" bind:value={temperature.c}/> Celsius = 
+<input type="number" bind:value={temperature.f}/> Fahrenheit
+```
