@@ -111,3 +111,11 @@ ___
 The `svelte:options` is usually used to create custom elements that can be used in the parent.
 
 Try this example below to see how it works:
+
+___
+
+## 7. svelte:self
+
+___
+
+***note that most of the svelte elements are rarely used***

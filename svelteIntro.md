@@ -59,6 +59,13 @@ Now we gonna use Typescript syntax;
 - **Clearer Code**: Types make your code easier to understand.
 - **Easy Setup**: Svelte works great with TypeScript right out of the box.
 
+- To use TypeScript inside your Svelte components, add `lang="ts"` to your `script` tags:
+
+```
+<script lang="ts">
+</script>
+```
+
 **Next step is optional, you can hit enter to skip to the next step.**
 
 ___
